@@ -120,21 +120,24 @@ main {
     .right {
         width: 310px;
         border-radius: 0 0 10px 10px;
-        padding-bottom: 0;
+
         .profil:hover {
             visibility: hidden;
+       
             .socialnet {
                 visibility: visible;
-                top: 0;
+                bottom: -25px;
                 left: 0;
                 margin: 0;
                 width: 310px;
+                margin-left: -25px;
                 margin-left: -25px;
                 border-radius: 0 0 10px 10px;
             }
             .socialnet ::after {
                 border-color: transparent transparent transparent transparent;
             }
+           
         }
     }
 }
