@@ -1,0 +1,140 @@
+@import 'vars';
+@import 'typography';
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: $Light-Grayish-Blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main {
+    width: 650px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    background: url('./images/drawers.jpg');
+    background-size: cover;
+    width: 40%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+}
+.right {
+    border-radius: 0 10px 10px 0;
+    width: 60%;
+    height: 100%;
+    background-color: $White;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.profil {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .socialnet {
+        visibility: hidden;
+        display: flex;
+        justify-content: space-around;
+        align-items: center ;
+        width: 60%;
+        height: 3.5em;
+        border-radius: 10px;
+        background-color: $Very-Dark-Grayish-Blue;
+        position: absolute;
+        bottom: 120%;
+        right: -80px;
+        padding: 1em 2em;
+        h1 {
+            color: $Desaturated-Dark-Blue;
+            font-size: x-small;
+            letter-spacing: 5px;
+        }
+        .facebook {
+            border-radius: 10%;
+        }
+    }
+    .socialnet ::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        border-width: 10px;
+        border-style: solid;
+        border-color: $Very-Dark-Grayish-Blue transparent transparent transparent;
+    }
+    
+    div {
+        margin-left: 1em;
+        font-size: small;
+        flex-grow: 1;
+    }
+    img {
+        border-radius: 50%;
+    }
+    .avatar {
+        width: 3em;
+    }
+    .share {
+        width: 1.5em;
+        background-color: $Light-Grayish-Blue;
+        padding: 5px;
+    }
+}
+.profil:hover .socialnet {
+        visibility: visible;
+    }
+.profil:hover .share {
+        background-color: $Very-Dark-Grayish-Blue;
+    }
+
+@media only screen and  (max-width: 600px) {
+    main {
+        height: 600px;
+        flex-direction: column;
+    }
+    .left {
+       img {
+        display: none;
+       }
+       width: 310px;
+       height: 60%;
+       background-image: url('./images/drawers.jpg');
+       background-size: cover;
+       border-radius: 10px 10px 0 0;
+    }
+    .right {
+        width: 310px;
+        border-radius: 0 0 10px 10px;
+        padding-bottom: 0;
+        .profil:hover {
+            visibility: hidden;
+            .socialnet {
+                visibility: visible;
+                top: 0;
+                left: 0;
+                margin: 0;
+                width: 310px;
+                margin-left: -25px;
+                border-radius: 0 0 10px 10px;
+            }
+            .socialnet ::after {
+                border-color: transparent transparent transparent transparent;
+            }
+        }
+    }
+}
